@@ -5,16 +5,12 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Codice Treno</th>
-        <th scope="col">Azienda</th>
-        <th scope="col">Stazione Di Partenza</th>
-        <th scope="col">Stazione Di Arrivo</th>
-        <th scope="col">Orario Di Partenza</th>
-        <th scope="col">Orario Di Arrivo</th>
-        <th scope="col">Numero Carrozze</th>
-        <th scope="col">Treno In Orario</th>
-        <th scope="col">Cancellato</th>
-        <th scope="col">Data</th>
+        @foreach ($columns as $colName)
+            @if ($colName !== 'created_at' && $colName !== 'updated_at')
+                <th scope="col">{{ $colName }}</th>
+            @endif
+        @endforeach
+        
       </tr>
     </thead>
     <tbody>
@@ -33,7 +29,6 @@
           <td>{{ $train->data}}</td>
 
         </tr>
-        {{-- <h1>{{ $today }}</h1> --}}
         @endforeach
       
     </tbody>
