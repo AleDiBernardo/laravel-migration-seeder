@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TrainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data=[
-        'greetings' => "Laravel-Vite template",
-    ];
-    return view('home', $data);
-})->name('home');
+// Route::get('/', function () {
+//     $data=[
+//         'greetings' => "Laravel-Vite template",
+//     ];
+//     return view('home', $data);
+// })->name('home');
 
 
-Route::get('/about', function () {
-    $data=[
-        'greetings' => "Laravel-Vite template",
-    ];
-    return view('about', $data);
-})->name('about');
+Route::get('/', [TrainController::class, 'index'])->name('home');
+
+
+// Route::get('/about', function () {
+//     $data=[
+//         'greetings' => "Laravel-Vite template",
+//     ];
+//     return view('about', $data);
+// })->name('about');

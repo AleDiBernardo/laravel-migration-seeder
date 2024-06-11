@@ -15,16 +15,7 @@
 
     <main>
 
-    {{-- Bootstrap still working --}}
-    <h1 class="text-white fw-bold">{{ $greetings }}</h1>
-
-    {{-- Image use sample --}}
-    <img src="{{Vite::asset('resources/img/sample.jpeg')}}" alt="">
-        @yield('content')
-
-        <span>Also Fontawesome --> </span>
-        <i class="fa-solid fa-house"></i>
-    
+     @yield('content')
     </main>
 
     @include('../partials/footer')

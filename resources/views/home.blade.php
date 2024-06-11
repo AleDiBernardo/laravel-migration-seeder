@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>Home</h2>
+    @include('partials/trains')
 @endsection
