@@ -11,7 +11,7 @@ class TrainController extends Controller
     public function index() {
         $today = Carbon::today()->toDateString();
         // dd($today);
-        $trainsList = Train::whereDate('data', $today)->get(); // array di oggetti
+        $trainsList = Train::whereDate('data','>=', $today)->get(); // array di oggetti
 
         // Ottieni il nome della tabella dal modello Train
         $tableName = (new Train)->getTable();
